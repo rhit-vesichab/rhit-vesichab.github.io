@@ -1,3 +1,27 @@
+/*Fonts*/
+@font-face {
+    font-family: "Satoshi";
+    src: url("Support/Fonts/Satoshi.otf");
+}
+
+/*Main body attributes*/
 body {
     background-color: #FAFAFA;
+    font-family: Satoshi;
+    color: #212427;
+}
+
+/*Italic font for job titles*/
+.job-title {
+    font-style: italic;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav a {
+    font-weight: bold;
+    text-decoration-line: none;
+    color: #212427;
 }
