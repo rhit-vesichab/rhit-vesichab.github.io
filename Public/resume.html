@@ -11,136 +11,156 @@
     </head>
 
     <body id="resume">
+        <script src="Scripts/main.js"></script>
+
+        <header>
+            <h2 id="name-heading">Austin Vesich</h2>
+        </header>
+
         <nav>
             <ul>
-                <li><a href="index.html">Main</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="resume.html">Resume</a></li>
+                <li><a href="resume.html" id="selected">Resume</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
         <main>
-            <h1>Resume</h1>
+            <div class="content-div" id="resume-content"> <!--This div is here so that main can be center aligned in flex mode and the content in this div is still left aligned-->
+                <h1 id="page-heading-text">Resume</h1>
 
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <h3><span class="degreeName">Bachelor of Engineering, Software Engineering</span> May 2026, GPA: 4.0</h3>
-                    <ul>
-                        <li>Rose-Hulman Institute of Technology, Terre Haute, IN</li>
-                        <li class="job-title">Related Courses: Data Structures and Algorithms, Web Programming, Database Systems, Software Project Management, Software Quality Assurance, Object-Oriented SoftwareDevelopment, Intro to Systems Programming, Technical Communication</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><span class="degreeName">iOS App Development Bootcamp</span> June 2023-Present</h3>
-                    <ul>
-                        <li>Online through Udemy, taught by Dr. Angela Yu</li>
-                        <li class="job-title">Concepts: GitHub, MVC & MVVM, Interface Builder, SwiftUI, Firebase, OOP and Swift, Unix Terminal, Swift Concurrency, CoreML, Networking, APIs & JSON Parsing, ARKit, App Publishing</li>
-                    </ul>
-                </li>
-            </ul>
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <h3><div class="degreeName">Bachelor of Engineering, Software Engineering</div></h3>
+                        <div class="date">May 2026, GPA: 4.0</div>
+                        <ul>
+                            <li>Rose-Hulman Institute of Technology, Terre Haute, IN</li>
+                            <li class="job-title">Related Courses: Data Structures and Algorithms, Web Programming, Database Systems, Software Project Management, Software Quality Assurance, Object-Oriented Software Development, Intro to Systems Programming, Technical Communication</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><div class="degreeName">iOS App Development Bootcamp</div></h3>
+                        <div class="date">June 2023-Present</div>
+                        <ul>
+                            <li>Online through Udemy, taught by Dr. Angela Yu</li>
+                            <li class="job-title">Concepts: GitHub, MVC & MVVM, Interface Builder, SwiftUI, Firebase, OOP and Swift, Unix Terminal, Swift Concurrency, CoreML, Networking, APIs & JSON Parsing, ARKit, App Publishing</li>
+                        </ul>
+                    </li>
+                </ul>
 
-            <h2>Skills</h2>
-            <dl>
-                <dt>Programming Languages</dt>
-                <dd>Swift/SwiftUI, Java, C++, C#, JavaScript</dd>
-                <dt>Applications and Services</dt>
-                <dd>Xcode, App Store distribution tools, Xcode Interface Builder, Figma, Notion, Git</dd>
-                <dt>Concepts</dt>
-                <dd>OOP, MVC and MVVM, Pair Programming</dd>
-            </dl>
+                <h2>Skills</h2>
+                <dl>
+                    <h3><dt class="employer">Programming Languages</dt></h3>
+                    <dd class="job-title">Swift, Java, HTML, CSS, JavaScript, Node.js, C++, C#</dd>
+                    <h3><dt class="employer">Applications and Services</dt></h3>
+                    <dd class="job-title">Xcode, App Store distribution tools, UIKit, SwiftUI, Figma, Notion, Git</dd>
+                    <h3><dt class="employer">Concepts</dt></h3>
+                    <dd class="job-title">OOP, MVC and MVVM, Pair Programming</dd>
+                </dl>
 
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <span class="employer">Code Ninjas Crown Point, Crown Point, IN</span>
-                    <span class="date">May 2022-August 2023</span>
-                    <div class="job-title">Lead Code Sensei, Curriculum Planner</div>
-                    <ul>
-                        <li>Developed block-based activities in Microsoft MakeCode for young students</li>
-                        <li>Explained and diagrammed programming concepts to aid students’ understanding of JavaScript programs</li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="employer">Expedition Future Corp., Crown Point, IN</span>
-                    <span class="date">September 2021-May 2022</span>
-                    <div class="job-title">Social Media Manager</div>
-                    <ul>
-                        <li><p>Utilized Canva to create and schedule unique social media posts for multiple platforms</p></li>
-                    </ul>
-                </li>
-            </ul>
+                <h2>Experience</h2>
+                <ul>
+                    <li>
+                        <h3><div class="employer">Code Ninjas Crown Point, Crown Point, IN</div></h3>
+                        <div class="date">May 2022-August 2023</div>
+                        <div class="job-title">Lead Code Sensei, Curriculum Planner</div>
+                        <ul>
+                            <li>Developed block-based activities in Microsoft MakeCode for young students</li>
+                            <li>Explained and diagrammed programming concepts to aid students’ understanding of JavaScript programs</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><div class="employer">Expedition Future Corp., Crown Point, IN</div></h3>
+                        <div class="date">September 2021-May 2022</div>
+                        <div class="job-title">Social Media Manager</div>
+                        <ul>
+                            <li>Utilized Canva to create and schedule unique social media posts for multiple platforms</li>
+                        </ul>
+                    </li>
+                </ul>
 
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <span class="employer">Personal iOS Project: </span>
-                    <span class="job-title">(Swift)</span>
-                    <span class="date">June 2018-August 2023</span>
-                    <ul>
-                        <li><p>Designed a user-friendly interface using Figma and Xcode Interface Builder</p></li>
-                        <li><p>Implemented an efficient, searchable storage system using hash-based data structures and heaps</p></li>
-                        <li><p>Utilized Swift networking and the SwiftSoup library to extract data from HTML</p></li>
-                        <li><p>Implemented data synchronization using Firebase services for storage and user authentication</p></li>
-                        <li><p>Handled purchase status’ asynchronously with StoreKit 2 and Swift concurrency</p></li>
-                        <li><p>Managed and Distributed versions of the app using App Store Connect and TestFlight</p></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="employer">iOS Development Exploration: </span>
-                    <span class="job-title">(Swift)</span>
-                    <span class="date">April 2023-Present</span>
-                    <ul>
-                        <li><p>Planned, Tracked, and Documented development across multiple small projects.</p></li>
-                        <li><p>Used SwiftUI to create reactive interface elements including graphs</p></li>
-                        <li><p>Trained a basic model using CreateML to identify animal classifications given their features</p></li>
-                        <li><p>Utilized CoreML to implement CreateML-generated models into swift code</p></li>
-                        <li><p>Used Network calls and JSON parsing to create a basic finance app backend</p></li>
-                            
-                    </ul>
-                </li>
-                <li>
-                    <span class="employer">Rose-Hulman CSSE 220 & 230: </span>
-                    <span class="job-title">(Java)</span>
-                    <span class="date">August 2022-February 2023</span>
-                    <ul>
-                        <li><p>Applied pair programming and utilized Java AWT graphics to create a 2d game in collaboration with other students.</p></li>
-                        <li><p>Analyzed data structure applications and implemented solutions, including AVL trees, to enhance inefficient code runtime by one or more orders of magnitude</p></li>
-                    </ul>
-                </li>
-            </ul>
+                <h2>Projects</h2>
+                <ul>
+                    <li>
+                        <h3>
+                            <span class="employer">Personal iOS Project: </span>
+                            <span class="job-title">(Swift)</span>
+                        </h3>
+                        <div class="date">June 2018-August 2023</div>
+                        <ul>
+                            <li>Designed a user-friendly interface using Figma and Xcode Interface Builder</li>
+                            <li>Implemented an efficient, searchable storage system using hash-based data structures and heap</li>
+                            <li>Utilized Swift networking and the SwiftSoup library to extract data from HTML</li>
+                            <li>Implemented data synchronization using Firebase services for storage and user authentication</li>
+                            <li>Handled purchase status’ asynchronously with StoreKit 2 and Swift concurrency</li>
+                            <li>Managed and Distributed versions of the app using App Store Connect and TestFlight</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span class="employer">iOS Development Exploration: </span>
+                            <span class="job-title">(Swift)</span>
+                        </h3>
+                        <div class="date">April 2023-Present</div>
+                        <ul>
+                            <li>Planned, Tracked, and Documented development across multiple small projects.</li>
+                            <li>Used SwiftUI to create reactive interface elements including graphs</li>
+                            <li>Trained a basic model using CreateML to identify animal classifications given their features</li>
+                            <li>Utilized CoreML to implement CreateML-generated models into swift code</li>
+                            <li>Used Network calls and JSON parsing to create a basic finance app backend</li>
+                                
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span class="employer">Rose-Hulman CSSE 220 & 230: </span>
+                            <span class="job-title">(Java)</span>
+                        </h3>
+                        <div class="date">August 2022-February 2023</div>
+                        <ul>
+                            <li>Applied pair programming and utilized Java AWT graphics to create a 2d game in collaboration with other students.</li>
+                            <li>Analyzed data structure applications and implemented solutions, including AVL trees, to enhance inefficient code runtime by one or more orders of magnitude</li>
+                        </ul>
+                    </li>
+                </ul>
 
-            <h2>Activities</h2>
-            <ul>
-                <li>
-                    <span class="employer">CPHS Vex Robotics Team: </span>
-                    <span class="job-title">Lead Designer, Engineer, Programmer (C++)</span>
-                    <span class="date">2018-2022</span>
-                    <ul>
-                        <li><p>Programmed general-application object-oriented drive control codebase for robots</p></li>
-                        <li><p>Earned Judges Award, Build Award, and Excellence Award</p></li>
-                        <li><p>3x State Qualifier (2018-19, 2020-21, 2021-2022)</p></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="employer">RHIT VEXU Robotics Team: </span>
-                    <span class="job-title">President, Founder, Programmer (C++)</span>
-                    <span class="date">2023-Present</span>
-                    <ul>
-                        <li><p>Researched, Compiled, and Presented statistics while establishing the team</p></li>
-                        <li><p>Communicated and negotiated with other RHIT competition team presidents and organizers to obtain a workspace and recognition as an RHIT competition team</p></li>
-                        <li><p>Organized meetings and shared resources through multiple applications including Microsoft Teams, Discord, and Google Drive.</p></li>
-                        <li><p>Documented team engineering choices using charts, compiled sketches and CAD drawings, and descriptions of thoughts and observations.</p></li>
-                    </ul>
-                </li>
-            </ul>
-            <script src="main.js"></script>
+                <h2>Activities</h2>
+                <ul>
+                    <li>
+                        <h3>
+                            <span class="employer">RHIT VEXU Robotics Team: </span>
+                            <span class="job-title">President, Founder, Programmer (C++)</span>
+                        </h3>
+                        <div class="date">2023-Present</div>
+                        <ul>
+                            <li>Researched, Compiled, and Presented statistics while establishing the team</li>
+                            <li>Communicated and negotiated with other RHIT competition team presidents and organizers to obtain a workspace and recognition as an RHIT competition team</li>
+                            <li>Organized meetings and shared resources through multiple applications including Microsoft Teams, Discord, and Google Drive.</li>
+                            <li>Documented team engineering choices using charts, compiled sketches and CAD drawings, and descriptions of thoughts and observations.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span class="employer">CPHS Vex Robotics Team: </span>
+                            <span class="job-title">Lead Designer, Engineer, Programmer (C++)</span>
+                        </h3>
+                        <div class="date">2018-2022</div>
+                        <ul>
+                            <li>Programmed general-application object-oriented drive control codebase for robots</li>
+                            <li>Earned Judges Award, Build Award, and Excellence Award</li>
+                            <li>3x State Qualifier (2018-19, 2020-21, 2021-2022)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </main>
         <footer>
-            <ul>
-                <li><a href="https://github.com/avesich"><img src="Support/Icons/github.svg"></a></li>
-                <li>vesichab@rose-hulman.edu</li>
-            </ul>
+            <div>
+                <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
+                <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
+                <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+            </div>
         </footer>
     </body>
 </html>

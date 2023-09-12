@@ -1,27 +1,312 @@
 /*Fonts*/
-@font-face {
-    font-family: "Satoshi";
-    src: url("Support/Fonts/Satoshi.otf");
+@import url("../Support/Fonts/Satoshi-Bold.otf");
+@import url("../Support/Fonts/Satoshi-Italic.otf");
+@import url("../Support/Fonts/Satoshi-Regular.otf");
+
+/* Colors */
+:root {
+    --lightGray: #FAFAFA;
+    --darkGray: #E9E9E9;
+    --black: #030407;
+    --lightBeige: #ede6d1;
+    --beige: #e3d9ba;
+    --lightGreen: #468755;
+    --green: #19472a;
+
+    --largeSpace: 6rem;
+    --mediumSpace: 4rem;
+    --smallSpace: 2rem;
+    --oneSpace: 1rem;
+    --wordPadding: 0.5rem;
+
+    font-family: 'Satoshi', sans-serif;
+    background-color: var(--lightGray);
+    background-image: url("../Support/Images/noise.png");
+
+    font-size: 1.2em;
+}
+
+/* Header attributes */
+body > header {
+    grid-area: head;
+    display: table;
+    margin-right: var(--mediumSpace);
+    padding: 0;
+}
+
+body > header > #name-heading {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1024px) {
+    body > header {
+        margin-left: var(--mediumSpace);
+        margin-right: 0;
+    }
+
+    body > header > #name-heading {
+        text-align: left;
+        padding-top: var(--smallSpace);
+        padding-bottom: 0;
+    }
+}
+
+/*Nav attributes*/
+body > nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 var(--mediumSpace);
+}
+
+body > nav > ul {
+    margin: auto 0;
+    padding-inline-start: 0;
+}
+
+body > nav ul li {
+    display: inline;
+    padding-right: var(--smallSpace);
 }
 
 /*Main body attributes*/
 body {
-    background-color: #FAFAFA;
     font-family: Satoshi;
-    color: #212427;
+    color: var(--black);
+
+    /* Grid Setup */
+    display: grid;
+    grid-template-areas: "nav  head"
+                         "main main"
+                         "foot foot";
+    grid-template-columns: 1fr 24rem; /* right col is 20 em, remaining is 1 fraction of the rest (the rest) */
+    grid-template-rows: var(--largeSpace) auto 7rem;
 }
 
-/*Italic font for job titles*/
-.job-title {
-    font-style: italic;
+body > main {
+    grid-area: main;
+
+    /*Horizontal centering*/
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    margin: 0 var(--mediumSpace);
+}
+body > main > .content-div {
+    max-width: 1920px;
+    width: 100%;
+}
+body > main > .content-div > h1 {
+    margin-bottom: var(--largeSpace);
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        grid-template-areas: "head head"
+                             "nav  nav "
+                             "main main"
+                             "foot foot";  
+        grid-template-columns: auto;
+        grid-template-rows: var(--mediumSpace) var(--mediumSpace) auto;        
+    }
+}
+
+/* Footer style */
+body > footer {
+    grid-area: foot;
+    position: fixed;
+    bottom: 0px;
+    background: url("../Support/Images/noise.png") var(--lightGray);
+    font-size: 1.3rem;
+    padding-top: var(--oneSpace);
+    padding-bottom: var(--mediumSpace);
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+body > footer div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    align-items: center;
+    justify-content: left;
+    margin: 0 var(--mediumSpace);
+}
+
+body > footer a {
+    margin-right: var(--smallSpace);
+}
+
+body > footer a:hover {
+    color: var(--black);
+}
+
+@media screen and (max-width: 1024px) {
+    body > footer div {
+        justify-content: center;  
+        margin: 0;  
+    }
+}
+
+/* Utility styles */
+p {
+    /* max-width: 35em; */
+    line-height: 1.6em;
+    font-size: 1rem;
+    margin: 0;
+    padding: var(--oneSpace) 0;
+}
+
+h1, h2, h3 {
+    padding: var(--oneSpace) 0;
+    margin: 0;
+    line-height: 1.2em;
+}
+
+body > .content-div #page-heading-text  {
+    padding: 0 0 var(--mediumSpace) 0;
+}
+
+ul {
+    margin: 0 var(--smallSpace);
+    padding: 0;
 }
 
 li {
     list-style-type: none;
 }
 
-nav a {
+dl {
+    margin: 0 var(--smallSpace);
+    padding: 0;
+}
+
+p > a {
+    font-size: 1rem;
+}
+
+a {
     font-weight: bold;
+    font-size: 1.2rem;
     text-decoration-line: none;
-    color: #212427;
+    color: var(--black);
+}
+
+a:hover {
+    color: var(--lightGreen);
+}
+
+#selected {
+    color: var(--green);
+    text-decoration: underline var(--green) 2px;
+    text-underline-offset: 8px;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+}
+
+.left-image {
+    margin-right: var(--mediumSpace);
+    float: left;
+}
+
+.right-image {
+    margin-left: var(--mediumSpace);
+    float: right;
+}
+
+.image-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: var(--mediumSpace) 0;
+}
+
+.image-div > #right-content { /* This is the non-image part of the image div */
+    margin: 0 0 0 auto;
+    text-align: right;
+}
+
+.image-div > #left-content { /* This is the non-image part of the image div */
+    margin: 0 auto 0 0;
+    text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+    .image-div {
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+    }
+
+    .image-div > #right-content, #left-content, .left-image, .right-image { /* This is the non-image part of the image div */
+        margin: 0;
+    }
+}
+
+
+.a-button {
+    display: inline-block; /* This is needed to make the link act like a button (padding & margin effects surrounding elements), since a elements are inline by default */
+    border: none;
+    background-color: var(--lightBeige);
+    font-weight: bold;
+    font-size: 1em;
+    padding: 1.3rem;
+    margin: var(--oneSpace) 0;
+    border-radius: var(--oneSpace);
+}
+
+.a-button:hover {
+    color: var(--black);
+    background-color: var(--beige);
+}
+
+/* Page dependent styles */
+/* Portfolio */
+body > main #portfolio-image {
+    height: 30rem;
+}
+
+body > main #portfolio-list:nth-child(odd) {
+    background-color: var(--darkGray);
+}
+
+body > main #portfolio-list .image-div {
+/* Add hover animation to this */
+}
+
+/* Resume */
+body > main #resume-content li, .date, .job-title, h3 {
+    /* Use margin instead of padding on the resume page since it equally spaces the list elemnents via vertical collapsing */
+    padding: 0;
+    margin: var(--oneSpace) 0;
+}
+
+.employer {
+    font-weight: bold;
+}
+
+.job-title {
+    font-style: italic;
+    font-weight: normal; /* This is to keep italic elements in headers light */
+}
+
+.date {
+    font-weight: bold;
+}
+
+
+/* About */
+body > main #about-image {
+    width: 15rem;
 }

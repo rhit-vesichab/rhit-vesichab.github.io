@@ -7,32 +7,42 @@
         <title>Austin Vesich</title>
         <link rel="stylesheet" href="Styles/normalize.css">
         <link rel="stylesheet" href="Styles/main.css">
-        <link rel="icon" href="images/favicon.png">
+        <link rel="icon" href="Support/Images/favicon.png">
     </head>
 
     <body id="home">
+        <script src="Scripts/main.js"></script>
+
+        <header>
+            <h2 id="name-heading">Austin Vesich</h2>
+        </header>
+
         <nav>
             <ul>
-                <li><a href="index.html">Main</a></li>
+                <li><a href="index.html" id="selected">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
+
         <main>
-            <h1>Austin Vesich</h1>
-            <img src="Support/animoji.png">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. In arcu cursus euismod quis viverra nibh cras pulvinar. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Nisl vel pretium lectus quam id leo in vitae. Rutrum tellus pellentesque eu tincidunt tortor. Eu consequat ac felis donec. Etiam dignissim diam quis enim lobortis. Sapien et ligula ullamcorper malesuada proin libero. Rutrum quisque non tellus orci. Ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus. In mollis nunc sed id semper risus in hendrerit gravida. Integer feugiat scelerisque varius morbi enim nunc. Risus feugiat in ante metus dictum at. Fermentum posuere urna nec tincidunt. Ultrices dui sapien eget mi proin. Nunc sed velit dignissim sodales ut eu sem integer. Eget est lorem ipsum dolor. Risus commodo viverra maecenas accumsan.
-
-                Metus dictum at tempor commodo ullamcorper. Nunc sed augue lacus viverra vitae congue eu consequat ac. Amet massa vitae tortor condimentum lacinia. Commodo viverra maecenas accumsan lacus. Nam aliquam sem et tortor consequat id porta nibh. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Amet commodo nulla facilisi nullam vehicula ipsum a. Enim nec dui nunc mattis. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Fermentum posuere urna nec tincidunt praesent semper feugiat. Eu lobortis elementum nibh tellus molestie nunc non. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Euismod in pellentesque massa placerat duis. Gravida dictum fusce ut placerat orci nulla.</p>
-
-            <script src="main.js"></script>
+            <div class="content-div image-div" id="home-header"> <!--This div is here so that main can be center aligned in flex mode and the content in this div) is still left aligned-->
+                <div id="left-content">
+                    <h1>Hey! 👋🏻</h1>
+                    <h2>My name is Austin Vesich.</h2>
+                    <p>I am a software engineering student @ Rose-Hulman Institute of Technology that is focused on using iOS development with Swift to innovate modern solutions to modern problems.</p>
+                    <a href="https://drive.google.com/uc?export=download&id=14gDsRuFdKyZH21P4iGksoeGCPcH_rcsu" target="_blank" class="a-button">Download my resume! &nbsp; &#x2913;</a>
+                </div>
+                <img src="Support/Images/animoji.png" class="right-image">
+            </div>
         </main>
         <footer>
-            <ul>
-                <li><a href="https://github.com/avesich"><img src="Support/Icons/github.svg"></a></li>
-                <li>vesichab@rose-hulman.edu</li>
-            </ul>
+            <div>
+                <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
+                <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
+                <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+            </div>
         </footer>
     </body>
 </html>
