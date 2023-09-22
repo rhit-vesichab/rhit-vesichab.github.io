@@ -27,26 +27,27 @@
 }
 
 /* Header attributes */
-body > header {
+body > #main-grid > header {
     grid-area: head;
-    display: table;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     margin-right: var(--mediumSpace);
     padding: 0;
 }
 
-body > header > #name-heading {
-    display: table-cell;
+body > #main-grid > header > #name-heading {
+    grid-area: 1 / 1 / 2 / 2;
     text-align: right;
-    vertical-align: middle;
 }
 
 @media screen and (max-width: 1024px) {
-    body > header {
+    body > #main-grid > header {
         margin-left: var(--mediumSpace);
         margin-right: 0;
     }
 
-    body > header > #name-heading {
+    body > #main-grid > header > #name-heading {
         text-align: left;
         padding-top: var(--smallSpace);
         padding-bottom: 0;
@@ -54,7 +55,7 @@ body > header > #name-heading {
 }
 
 /*Nav attributes*/
-body > nav {
+body > #main-grid > nav {
     grid-area: nav;
     display: flex;
     flex-direction: row;
@@ -62,18 +63,18 @@ body > nav {
     margin: 0 var(--mediumSpace);
 }
 
-body > nav > ul {
+body > #main-grid > nav > ul {
     margin: auto 0;
     padding-inline-start: 0;
 }
 
-body > nav ul li {
+body > #main-grid > nav ul li {
     display: inline;
     padding-right: var(--smallSpace);
 }
 
 /*Main body attributes*/
-body {
+body > #main-grid {
     font-family: Satoshi;
     color: var(--black);
 
@@ -83,10 +84,14 @@ body {
                          "main main"
                          "foot foot";
     grid-template-columns: 1fr 24rem; /* right col is 20 em, remaining is 1 fraction of the rest (the rest) */
-    grid-template-rows: var(--largeSpace) auto 7rem;
+    grid-template-rows: var(--largeSpace) 1fr 7rem;
+
+    align-items: center;
+    
+    height: 99vh;
 }
 
-body > main {
+body > #main-grid > main {
     grid-area: main;
 
     /*Horizontal centering*/
@@ -98,16 +103,16 @@ body > main {
     
     margin: 0 var(--mediumSpace);
 }
-body > main > .content-div {
+body > #main-grid > main > .content-div {
     max-width: 1920px;
     width: 100%;
 }
-body > main > .content-div > h1 {
+body > #main-grid > main > .content-div > h1 {
     margin-bottom: var(--largeSpace);
 }
 
 @media screen and (max-width: 1024px) {
-    body {
+    body > #main-grid {
         grid-template-areas: "head head"
                              "nav  nav "
                              "main main"
@@ -118,9 +123,8 @@ body > main > .content-div > h1 {
 }
 
 /* Footer style */
-body > footer {
+body > #main-grid > footer {
     grid-area: foot;
-    position: fixed;
     bottom: 0px;
     background: url("../Support/Images/noise.png") var(--lightGray);
     font-size: 1.3rem;
@@ -131,7 +135,7 @@ body > footer {
     width: 100%;
 }
 
-body > footer div {
+body > #main-grid > footer div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -141,16 +145,16 @@ body > footer div {
     margin: 0 var(--mediumSpace);
 }
 
-body > footer a {
+body > #main-grid > footer a {
     margin-right: var(--smallSpace);
 }
 
-body > footer a:hover {
+body > #main-grid > footer a:hover {
     color: var(--black);
 }
 
 @media screen and (max-width: 1024px) {
-    body > footer div {
+    body > #main-grid > footer div {
         justify-content: center;  
         margin: 0;  
     }
@@ -171,7 +175,7 @@ h1, h2, h3 {
     line-height: 1.2em;
 }
 
-body > .content-div #page-heading-text  {
+body > #main-grid > .content-div #page-heading-text  {
     padding: 0 0 var(--mediumSpace) 0;
 }
 
@@ -273,20 +277,20 @@ a:hover {
 
 /* Page dependent styles */
 /* Portfolio */
-body > main #portfolio-image {
+body > #main-grid > main #portfolio-image {
     height: 30rem;
 }
 
-body > main #portfolio-list:nth-child(odd) {
+body > #main-grid > main #portfolio-list:nth-child(odd) {
     background-color: var(--darkGray);
 }
 
-body > main #portfolio-list .image-div {
+body > #main-grid > main #portfolio-list .image-div {
 /* Add hover animation to this */
 }
 
 /* Resume */
-body > main #resume-content li, .date, .job-title, h3 {
+body > #main-grid > main #resume-content li, .date, .job-title, h3 {
     /* Use margin instead of padding on the resume page since it equally spaces the list elemnents via vertical collapsing */
     padding: 0;
     margin: var(--oneSpace) 0;
@@ -307,6 +311,6 @@ body > main #resume-content li, .date, .job-title, h3 {
 
 
 /* About */
-body > main #about-image {
+body > #main-grid > main #about-image {
     width: 15rem;
 }
