@@ -11,27 +11,42 @@
     </head>
 
     <body id="about">
-        <script src="Scripts/main.js"></script>
+        <script src="Scripts/main.js" defer></script>
 
-        <section id="main-grid">
+        <section id="mainGrid">
             <header>
-                <h2 id="name-heading">Austin Vesich</h2>
+                <a href="index.html"><img id="headerImage" alt="Austin emoji smiling" src="Support/Images/favicon.png"></a>
             </header>
 
-            <nav>
+            <nav id="navBar">
+                <ul id="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html" id="selected">About</a></li>
+                </ul>
+                <img id="openMenuButton" src="Support/Icons/hamburger.svg">
+            </nav>
+
+            <nav id="navMenu">
+                <img id="closeMenuButton" src="Support/Icons/close.svg">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html" id="selected">About</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html" id="selected">About</a></li>
                 </ul>
             </nav>
+
             <main>
                 <div class="content-div"> <!--This div is here so that main can be center aligned in flex mode and the content in this div is still left aligned-->
-                    <h1 id="page-heading-text">About</h1>
-                    <div class="image-div">
-                        <img class="left-image" id="about-image" src="Support/Images/austin.jpg">
-                        <p>Hello, my name is Austin Vesich, and I am a highly motivated software engineer at the Rose-Hulman Institute of Technology. I prioritize iOS development, and love the feeling of figuring things out for the first time. As a result, I am currently focused on expanding my knowledge of swift and sharpening my existing skills to be the best possible.
+                    <h1 id="pageHeadingText">About</h1>
+                    <div class="image-div right-text-mode">
+                        <div class="image-div-image" id="aboutApp">
+                            <img id="aboutImage" alt="Austin in suit" src="Support/Images/austin.jpg">
+                            <p id="appText">Austin Vesich</p>
+                        </div>
+                        <p class="image-div-text">My name is Austin Vesich, and I am a highly motivated software engineer at the Rose-Hulman Institute of Technology. I prioritize iOS development, and love the feeling of figuring things out for the first time. As a result, I am currently focused on expanding my knowledge of swift and sharpening my existing skills to be the best possible.
                             When developing apps, I focus on what matters; I make sure every feature works the best it possibly can, all of the bugs are worked out, and every control speaks for itself and is easily accessible. I don't believe in releasing broken production code, and I work my hardest to prevent doing so.
                             As a result of my hard work and dedication, I have a number of both practice projects and completed applications available for view on my github and the <a href="portfolio.html">portfolio page</a>.
                             <br> 
@@ -44,9 +59,9 @@
             </main>
             <footer>
                 <div>
-                    <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
-                    <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
-                    <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://github.com/avesich" target="_blank"><img class="icon" alt="Github image" src="Support/Icons/github.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" alt="Linkedin image" src="Support/Icons/linkedin.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="mailto:vesichab@rose-hulman.edu">Contact</a>
                 </div>
             </footer>
         </section>

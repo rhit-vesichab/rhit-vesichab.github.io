@@ -11,24 +11,36 @@
     </head>
 
     <body id="resume">
-        <script src="Scripts/main.js"></script>
+        <script src="Scripts/main.js" defer></script>
 
-        <section id="main-grid">
+        <section id="mainGrid">
             <header>
-                <h2 id="name-heading">Austin Vesich</h2>
+                <a href="index.html"><img id="headerImage" alt="Austin emoji smiling" src="Support/Images/favicon.png"></a>
             </header>
 
-            <nav>
+            <nav id="navBar">
+                <ul id="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html" id="selected">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
+                </ul>
+                <img id="openMenuButton" src="Support/Icons/hamburger.svg">
+            </nav>
+
+            <nav id="navMenu">
+                <img id="closeMenuButton" src="Support/Icons/close.svg">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="resume.html" id="selected">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html" id="selected">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
                 </ul>
             </nav>
+
             <main>
-                <div class="content-div" id="resume-content"> <!--This div is here so that main can be center aligned in flex mode and the content in this div is still left aligned-->
-                    <h1 id="page-heading-text">Resume</h1>
+                <div class="content-div" id="resumeContent"> <!--This div is here so that main can be center aligned in flex mode and the content in this div is still left aligned-->
+                    <h1 id="pageHeadingText">Resume</h1>
 
                     <h2>Education</h2>
                     <ul>
@@ -158,9 +170,9 @@
             </main>
             <footer>
                 <div>
-                    <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
-                    <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
-                    <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://github.com/avesich" target="_blank"><img class="icon" alt="Github image" src="Support/Icons/github.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" alt="Linkedin image" src="Support/Icons/linkedin.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="mailto:vesichab@rose-hulman.edu">Contact</a>
                 </div>
             </footer>
         </section>

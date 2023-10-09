@@ -10,19 +10,31 @@
         <link rel="icon" href="Support/Images/favicon.png">
     </head>
 
-    <body id="home">
-        <script src="Scripts/main.js"></script>
-        <section id="main-grid">
+    <body id="home">    
+        <script src="Scripts/main.js" defer></script>
+        
+        <section id="mainGrid">
             <header>
-                <h2 id="name-heading">Austin Vesich</h2>
+                <a href="index.html"><img id="headerImage" alt="Austin emoji smiling" src="Support/Images/favicon.png"></a>
             </header>
 
-            <nav>
+            <nav id="navBar">
+                <ul id="list">
+                    <li><a href="index.html" id="selected">Home</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
+                </ul>
+                <img id="openMenuButton" src="Support/Icons/hamburger.svg">
+            </nav>
+
+            <nav id="navMenu">
+                <img id="closeMenuButton" src="Support/Icons/close.svg">
                 <ul>
                     <li><a href="index.html" id="selected">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
                 </ul>
             </nav>
 
@@ -32,16 +44,16 @@
                         <h1>Hey! 👋🏻</h1>
                         <h2>My name is Austin Vesich.</h2>
                         <p>I am a software engineering student @ Rose-Hulman Institute of Technology that is focused on using iOS development with Swift to innovate modern solutions to modern problems.</p>
-                        <a href="https://drive.google.com/uc?export=download&id=14gDsRuFdKyZH21P4iGksoeGCPcH_rcsu" target="_blank" class="a-button">Download my resume! &nbsp; &#x2913;</a>
+                        <a data-reaction-style="download_resume" href="https://drive.google.com/uc?export=download&id=14gDsRuFdKyZH21P4iGksoeGCPcH_rcsu" target="_blank" class="a-button reactive-button">Download my resume! &nbsp; &#x2913;</a>
                     </div>
-                    <img src="Support/Images/animoji.png" class="right-image">
+                    <img alt="Austin emoji on laptop" src="Support/Images/animoji.png" class="right-image">
                 </div>
             </main>
             <footer>
                 <div>
-                    <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
-                    <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
-                    <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://github.com/avesich" target="_blank"><img class="icon" alt="Github image" src="Support/Icons/github.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" alt="Linkedin image" src="Support/Icons/linkedin.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="mailto:vesichab@rose-hulman.edu">Contact</a>
                 </div>
             </footer>
         </section>

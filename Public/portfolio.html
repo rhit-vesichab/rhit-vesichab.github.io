@@ -11,50 +11,62 @@
     </head>
 
     <body id="portfolio">
-        <script src="Scripts/main.js"></script>
+        <script src="Scripts/main.js" defer></script>
 
-        <section id="main-grid">
+        <section id="mainGrid">
             <header>
-                <h2 id="name-heading">Austin Vesich</h2>
+                <a href="index.html"><img id="headerImage" alt="Austin emoji smiling" src="Support/Images/favicon.png"></a>
             </header>
 
-            <nav>
+            <nav id="navBar">
+                <ul id="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html" id="selected">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
+                </ul>
+                <img id="openMenuButton" src="Support/Icons/hamburger.svg">
+            </nav>
+
+            <nav id="navMenu">
+                <img id="closeMenuButton" src="Support/Icons/close.svg">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html" id="selected">Portfolio</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a data-reaction-style="portfolio" class="reactive-button" href="portfolio.html" id="selected">Portfolio</a></li>
+                    <li><a data-reaction-style="resume" class="reactive-button" href="resume.html">Resume</a></li>
+                    <li><a data-reaction-style="about" class="reactive-button" href="about.html">About</a></li>
                 </ul>
             </nav>
+            
             <main>
                 <div class="content-div"> <!--This div is here so that main can be center aligned in flex mode and the content in this div is still left aligned-->
-                    <h1 id="page-heading-text">Portfolio</h1>
-                    <ul id="portfolio-list">
+                    <h1 id="pageHeadingText">Portfolio</h1>
+                    <ul id="portfolioList">
                         <li>
-                            <div class="image-div">
-                                <div id="left-content">
+                            <div class="image-div left-text-mode">
+                                <img class="image-div-image" id="portfolioImage" alt="Chip Poker Assistant app image" src="Support/Portfolio/chip.png">
+                                <div class="image-div-text">
                                     <a href="#"><h2>Chip Poker Assistant</h2></a>
-                                    <p>A poker game planner and statistic tracker like no other.</p>
+                                    <p>A poker game planner and statistic tracker like no other. Input events, virtual tables, and players into Chip, and find out what to expect from your opponents.</p>
                                 </div>
-                                <img class="right-image" id="portfolio-image" src="Support/Portfolio/chip.png">
                             </div>
                         </li>
                         <li>
-                            <div class="image-div">
-                                <img class="left-image" id="portfolio-image" src="Support/Portfolio/sotd.png">
-                                <div id="right-content">
+                            <div class="image-div right-text-mode">
+                                <img class="image-div-image" id="portfolioImage" alt="Song of the Day app image" src="Support/Portfolio/sotd.png">
+                                <div class="image-div-text">
                                     <a href="#"><h2>Song of the Day</h2></a>
-                                    <p>Discover a new song every day!</p>
+                                    <p>A private app I made for a client that allows users to view a specified song each day, track their daily streak, and see what others think of the daily song!</p>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="image-div">
-                                <div id="left-content">
+                            <div class="image-div left-text-mode">
+                                <img class="image-div-image" id="portfolioImage" alt="Cryptocurrency tracker app image" src="Support/Portfolio/crypto.png">
+                                <div class="image-div-text">
                                     <a href="#"><h2>CoinCap Client</h2></a>
-                                    <p>A cryptocurrency demo project using graphs, networking, and the CoinCap API.</p>
+                                    <p>A cryptocurrency demo project in SwiftUI using Custom graphs, Swift networking, and the CoinCap API.</p>
                                 </div>
-                                <img class="right-image" id="portfolio-image" src="Support/Portfolio/crypto.png">
                             </div>
                         </li>
                     </ul>
@@ -62,9 +74,9 @@
             </main>
             <footer>
                 <div>
-                    <a href="https://github.com/avesich" target="_blank"><img class="icon" src="Support/Icons/github.svg"></a>
-                    <a href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" src="Support/Icons/linkedin.svg"></a>
-                    <a href="mailto:vesichab@rose-hulman.edu">Contact</a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://github.com/avesich" target="_blank"><img class="icon" alt="Github image" src="Support/Icons/github.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="https://www.linkedin.com/in/austinvesich000" target="_blank"><img class="icon" alt="Linkedin image" src="Support/Icons/linkedin.svg"></a>
+                    <a data-reaction-style="contact" class="reactive-button" href="mailto:vesichab@rose-hulman.edu">Contact</a>
                 </div>
             </footer>
         </section>

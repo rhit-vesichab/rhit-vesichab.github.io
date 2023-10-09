@@ -7,7 +7,7 @@
 :root {
     --lightGray: #FAFAFA;
     --darkGray: #E9E9E9;
-    --black: #030407;
+    --black: #212427;
     --lightBeige: #ede6d1;
     --beige: #e3d9ba;
     --lightGreen: #468755;
@@ -27,35 +27,23 @@
 }
 
 /* Header attributes */
-body > #main-grid > header {
+body > #mainGrid > header {
     grid-area: head;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
     margin-right: var(--mediumSpace);
-    padding: 0;
+    margin-left: auto;
+    padding: var(--smallSpace) 0;
 }
 
-body > #main-grid > header > #name-heading {
-    grid-area: 1 / 1 / 2 / 2;
-    text-align: right;
+body > #mainGrid > header #headerImage {
+    height: 64px;
 }
 
-@media screen and (max-width: 1024px) {
-    body > #main-grid > header {
-        margin-left: var(--mediumSpace);
-        margin-right: 0;
-    }
-
-    body > #main-grid > header > #name-heading {
-        text-align: left;
-        padding-top: var(--smallSpace);
-        padding-bottom: 0;
-    }
-}
-
-/*Nav attributes*/
-body > #main-grid > nav {
+/* Nav Bar attributes*/
+body > #mainGrid > #navBar {
     grid-area: nav;
     display: flex;
     flex-direction: row;
@@ -63,18 +51,67 @@ body > #main-grid > nav {
     margin: 0 var(--mediumSpace);
 }
 
-body > #main-grid > nav > ul {
+body > #mainGrid > #navBar > #openMenuButton {
+    display: block;
+    height: 48px;
+    width: 48px;
+}
+
+body > #mainGrid > #navBar > ul {
+    display: none;
     margin: auto 0;
     padding-inline-start: 0;
 }
 
-body > #main-grid > nav ul li {
+body > #mainGrid > #navBar ul li {
     display: inline;
     padding-right: var(--smallSpace);
 }
 
+@media screen and (min-width: 1024px) {
+    body > #mainGrid > #navBar > #openMenuButton {
+        display: none;
+    }
+    
+    body > #mainGrid > #navBar > ul {
+        display: block;
+    }
+}
+
+/* Nav Menu attributes */
+body > #mainGrid > #navMenu > #closeMenuButton {
+    height: var(--mediumSpace);
+    padding: var(--smallSpace);
+    width: 28px;
+}
+
+body > #mainGrid > #navMenu {
+    align-items: start;
+    background-color: var(--darkGray);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: baseline;
+    left: -256px;
+    position: fixed;
+    top: 0;
+    width: 256px;
+    z-index: 5;
+
+    transition: left 0.3s ease-out;
+}
+
+body > #mainGrid > #navMenu > ul {
+    margin: 0 auto 0 var(--smallSpace);
+}
+
+body > #mainGrid > #navMenu > ul > li {
+    padding: 0 0 var(--oneSpace) 0; /* Padding instead of margin to also increase interactive area */
+}
+
+
 /*Main body attributes*/
-body > #main-grid {
+body > #mainGrid {
     font-family: Satoshi;
     color: var(--black);
 
@@ -83,15 +120,15 @@ body > #main-grid {
     grid-template-areas: "nav  head"
                          "main main"
                          "foot foot";
-    grid-template-columns: 1fr 24rem; /* right col is 20 em, remaining is 1 fraction of the rest (the rest) */
-    grid-template-rows: var(--largeSpace) 1fr 7rem;
+    grid-template-columns: 1fr auto; /* right col is 20 em, remaining is 1 fraction of the rest (the rest) */
+    grid-template-rows: auto 1fr auto;
 
     align-items: center;
     
-    height: 99vh;
+    min-height: 99vh;
 }
 
-body > #main-grid > main {
+body > #mainGrid > main {
     grid-area: main;
 
     /*Horizontal centering*/
@@ -103,39 +140,26 @@ body > #main-grid > main {
     
     margin: 0 var(--mediumSpace);
 }
-body > #main-grid > main > .content-div {
+body > #mainGrid > main > .content-div {
     max-width: 1920px;
     width: 100%;
 }
-body > #main-grid > main > .content-div > h1 {
-    margin-bottom: var(--largeSpace);
-}
 
-@media screen and (max-width: 1024px) {
-    body > #main-grid {
-        grid-template-areas: "head head"
-                             "nav  nav "
-                             "main main"
-                             "foot foot";  
-        grid-template-columns: auto;
-        grid-template-rows: var(--mediumSpace) var(--mediumSpace) auto;        
-    }
-}
 
 /* Footer style */
-body > #main-grid > footer {
+body > #mainGrid > footer {
     grid-area: foot;
     bottom: 0px;
     background: url("../Support/Images/noise.png") var(--lightGray);
     font-size: 1.3rem;
-    padding-top: var(--oneSpace);
+    padding-top: var(--smallSpace);
     padding-bottom: var(--mediumSpace);
     padding-left: 0;
     padding-right: 0;
     width: 100%;
 }
 
-body > #main-grid > footer div {
+body > #mainGrid > footer div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -145,16 +169,20 @@ body > #main-grid > footer div {
     margin: 0 var(--mediumSpace);
 }
 
-body > #main-grid > footer a {
+body > #mainGrid > footer a {
     margin-right: var(--smallSpace);
 }
 
-body > #main-grid > footer a:hover {
+body > #mainGrid > footer a:last-child {
+    margin-right: 0;
+}
+
+body > #mainGrid > footer a:hover {
     color: var(--black);
 }
 
 @media screen and (max-width: 1024px) {
-    body > #main-grid > footer div {
+    body > #mainGrid > footer div {
         justify-content: center;  
         margin: 0;  
     }
@@ -175,8 +203,9 @@ h1, h2, h3 {
     line-height: 1.2em;
 }
 
-body > #main-grid > .content-div #page-heading-text  {
-    padding: 0 0 var(--mediumSpace) 0;
+body > #mainGrid .content-div #pageHeadingText  {
+    padding-top: 0;
+    padding-bottom: var(--smallSpace);
 }
 
 ul {
@@ -200,7 +229,7 @@ p > a {
 a {
     font-weight: bold;
     font-size: 1.2rem;
-    text-decoration-line: none;
+    text-decoration: none;
     color: var(--black);
 }
 
@@ -208,10 +237,35 @@ a:hover {
     color: var(--lightGreen);
 }
 
+nav a {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav a::after {
+    background-color: var(--lightGreen);
+    content: "";
+    position: absolute;
+    /* left: 0; */
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.25s ease-out;
+    z-index: -100;
+}
+
+nav a:hover::after {
+    left: 0;
+    margin-right: auto;
+    width: 100%;
+}
+
 #selected {
     color: var(--green);
     text-decoration: underline var(--green) 2px;
-    text-underline-offset: 8px;
+    text-underline-offset: 0.35rem;
 }
 
 .icon {
@@ -219,55 +273,65 @@ a:hover {
     height: 36px;
 }
 
-.left-image {
-    margin-right: var(--mediumSpace);
-    float: left;
-}
-
-.right-image {
-    margin-left: var(--mediumSpace);
-    float: right;
-}
-
+/* Div flex properties are assigned with the additional .right-text-mode and .left-text-mode classes */
 .image-div {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    flex-wrap: nowrap;
-    padding: var(--mediumSpace) 0;
+    display: flex;
+    flex-basis: 100%;
+    gap: var(--oneSpace);
+    margin-bottom: var(--largeSpace);
 }
 
-.image-div > #right-content { /* This is the non-image part of the image div */
-    margin: 0 0 0 auto;
+.right-text-mode {
+    flex-direction: row;
     text-align: right;
 }
 
-.image-div > #left-content { /* This is the non-image part of the image div */
-    margin: 0 auto 0 0;
+.left-text-mode {
+    flex-direction: row-reverse;
     text-align: left;
 }
 
-@media screen and (max-width: 1024px) {
+.image-div-text {
+    flex-grow: 1;
+    width: 100%;
+}
+.image-div-image {
+    flex-grow: 0;
+}
+
+@media screen and (min-width: 1150px) {
     .image-div {
-        flex-direction: column;
-        flex-wrap: wrap-reverse;
+        gap: var(--mediumSpace);
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .image-div {
+        flex-direction: column-reverse;
+        text-align: left;
     }
 
-    .image-div > #right-content, #left-content, .left-image, .right-image { /* This is the non-image part of the image div */
-        margin: 0;
+    .right-text-mode, .left-text-mode {
+        flex-wrap: wrap;
+    }
+
+    .image-div-image {
+        margin: 0 auto;
     }
 }
 
 
 .a-button {
     display: inline-block; /* This is needed to make the link act like a button (padding & margin effects surrounding elements), since a elements are inline by default */
-    border: none;
     background-color: var(--lightBeige);
+    border: none;
+    border-radius: var(--oneSpace);
     font-weight: bold;
     font-size: 1em;
-    padding: 1.3rem;
     margin: var(--oneSpace) 0;
-    border-radius: var(--oneSpace);
+    padding: 1.3rem;
+    transition: all 0.1s ease-out;
 }
 
 .a-button:hover {
@@ -277,20 +341,28 @@ a:hover {
 
 /* Page dependent styles */
 /* Portfolio */
-body > #main-grid > main #portfolio-image {
-    height: 30rem;
+body > #mainGrid > main #portfolioImage {
+    height: 25rem;
+    transition: all 0.15s ease-out;
 }
 
-body > #main-grid > main #portfolio-list:nth-child(odd) {
+body > #mainGrid > main #portfolioImage:hover {
+    -webkit-filter: drop-shadow(4px 10px 7px rgba(3, 4, 7, 0.15));
+    filter: drop-shadow(4px 10px 7px rgba(3, 4, 7, 0.15));
+    transform: scale(1.02, 1.02);
+}
+
+
+body > #mainGrid > main #portfolioList:nth-child(odd) {
     background-color: var(--darkGray);
 }
 
-body > #main-grid > main #portfolio-list .image-div {
-/* Add hover animation to this */
+body > #mainGrid > main #portfolioList {
+    margin: 0;
 }
 
 /* Resume */
-body > #main-grid > main #resume-content li, .date, .job-title, h3 {
+body > #mainGrid > main #resumeContent li, .date, .job-title, h3 {
     /* Use margin instead of padding on the resume page since it equally spaces the list elemnents via vertical collapsing */
     padding: 0;
     margin: var(--oneSpace) 0;
@@ -311,6 +383,37 @@ body > #main-grid > main #resume-content li, .date, .job-title, h3 {
 
 
 /* About */
-body > #main-grid > main #about-image {
+body > #mainGrid > main #aboutImage {
     width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 0 20%;
+    -webkit-mask-image: url(../Support/Images/About\ Crop\ Rectangle.svg);
+    -webkit-mask-size: 15rem 15rem;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url(../Support/Images/About\ Crop\ Rectangle.svg);
+    mask-size: 15rem 15rem;
+    mask-repeat: no-repeat;
+}
+
+body > #mainGrid > main #aboutApp:hover {
+    animation: appWiggle 0.35s infinite ease-out;
+}
+
+#about .right-text-mode {
+    text-align: left;
+}
+
+@keyframes appWiggle {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-0.5deg); }
+    75% { transform: rotate(0.5deg); }
+    100% { transform: rotate(0); }
+}
+
+body > #mainGrid > main #appText {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgba(3, 4, 7, 0.4); /* For some reason var, opacity wouldn't work, but this is just 30% --black */
 }
