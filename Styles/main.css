@@ -179,7 +179,7 @@ body > #mainGrid > footer a:hover {
     color: var(--black);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     body > #mainGrid > footer div {
         justify-content: center;  
         margin: 0;  
