@@ -17,11 +17,23 @@
 
     --largeSpace: 6rem;
     --mediumSpace: 4rem;
+    --mobileEdgeSpace: 2rem;
     --smallSpace: 2rem;
     --oneSpace: 1rem;
     --wordPadding: 0.5rem;
 
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi-Variable', sans-serif;
+    font-family: 'Satoshi-VariableItalic', sans-serif;
+    font-family: 'Satoshi-Light', sans-serif;
+    font-family: 'Satoshi-LightItalic', sans-serif;
+    font-family: 'Satoshi-Regular', sans-serif;
+    font-family: 'Satoshi-Italic', sans-serif;
+    font-family: 'Satoshi-Medium', sans-serif;
+    font-family: 'Satoshi-MediumItalic', sans-serif;
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-family: 'Satoshi-BoldItalic', sans-serif;
+    font-family: 'Satoshi-Black', sans-serif;
+    font-family: 'Satoshi-BlackItalic', sans-serif;
     background-color: var(--lightGray);
     background-image: url("../Support/Images/noise.png");
 
@@ -71,6 +83,14 @@ body > #mainGrid > #navBar ul li {
 }
 
 @media screen and (max-width: 1024px) {
+    body > #mainGrid > #navBar {
+        margin: 0 var(--mobileEdgeSpace);
+    }
+
+    body > #mainGrid > header {
+        margin-right: var(--mobileEdgeSpace);
+    }
+
     body > #mainGrid > #navBar > #openMenuButton {
         display: block;
     }
@@ -128,6 +148,16 @@ body > #mainGrid {
     align-items: center;
     
     min-height: 99vh;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: 0;
 }
 
 body > #mainGrid > main {
@@ -142,6 +172,13 @@ body > #mainGrid > main {
     
     margin: 0 var(--mediumSpace);
 }
+
+@media screen and (max-width: 1024px) {
+    body > #mainGrid > main {
+        margin: 0 var(--mobileEdgeSpace);
+    }
+}
+
 body > #mainGrid > main > .content-div {
     max-width: 1920px;
     width: 100%;
@@ -168,7 +205,7 @@ body > #mainGrid > footer div {
     flex-basis: auto;
     align-items: center;
     justify-items: left;
-    margin: 0 var(--mediumSpace);
+    margin: 0 var(--edgeSpace);
 }
 
 body > #mainGrid > footer a {
@@ -186,7 +223,7 @@ body > #mainGrid > footer a:hover {
 @media screen and (max-width: 1024px) {
     body > #mainGrid > footer div {
         justify-content: center;  
-        margin: 0;  
+        margin: 0; 
     }
 }
 
