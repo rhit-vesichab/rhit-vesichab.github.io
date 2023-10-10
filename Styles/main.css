@@ -335,12 +335,18 @@ nav a:hover::after {
 }
 
 /* Page dependent styles */
-/* Home and 404 */
-#home .image-div {
+/* 404 */
+#error .image-div {
     margin-bottom: 0;
 }
 
-#error .image-div {
+#error a {
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+/* Home */
+#home .image-div {
     margin-bottom: 0;
 }
 
