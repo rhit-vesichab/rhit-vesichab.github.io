@@ -1,7 +1,9 @@
-/*Fonts*/
-@import url("../Support/Fonts/Satoshi-Bold.otf");
+/* Fonts */
+@import url("satoshi.css");
+
+/* @import url("../Support/Fonts/Satoshi-Bold.otf");
 @import url("../Support/Fonts/Satoshi-Italic.otf");
-@import url("../Support/Fonts/Satoshi-Regular.otf");
+@import url("../Support/Fonts/Satoshi-Regular.otf"); */
 
 /* Colors */
 :root {
