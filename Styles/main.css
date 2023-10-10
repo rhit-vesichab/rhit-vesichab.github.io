@@ -335,50 +335,59 @@ nav a:hover::after {
 }
 
 /* Page dependent styles */
+/* Home and 404 */
+#home .image-div {
+    margin-bottom: 0;
+}
+
+#error .image-div {
+    margin-bottom: 0;
+}
+
 /* Portfolio */
-body > #mainGrid > main #portfolioImage {
+#portfolio #portfolioImage {
     height: 25rem;
     transition: all 0.15s ease-out;
 }
 
-body > #mainGrid > main #portfolioImage:hover {
+#portfolio #portfolioImage:hover {
     -webkit-filter: drop-shadow(4px 10px 7px rgba(3, 4, 7, 0.15));
     filter: drop-shadow(4px 10px 7px rgba(3, 4, 7, 0.15));
     transform: scale(1.02, 1.02);
 }
 
 
-body > #mainGrid > main #portfolioList:nth-child(odd) {
+#portfolio #portfolioList:nth-child(odd) {
     background-color: var(--darkGray);
 }
 
-body > #mainGrid > main #portfolioList {
+#portfolio #portfolioList {
     margin: 0;
 }
 
 /* Resume */
-body > #mainGrid > main #resumeContent li, .date, .job-title, h3 {
+#resume #resumeContent li, .date, .job-title, h3 {
     /* Use margin instead of padding on the resume page since it equally spaces the list elemnents via vertical collapsing */
     padding: 0;
     margin: var(--oneSpace) 0;
 }
 
-.employer {
+#resume .employer {
     font-weight: bold;
 }
 
-.job-title {
+#resume .job-title {
     font-style: italic;
     font-weight: normal; /* This is to keep italic elements in headers light */
 }
 
-.date {
+#resume .date {
     font-weight: bold;
 }
 
 
 /* About */
-body > #mainGrid > main #aboutImage {
+#about #aboutImage {
     width: 15rem;
     height: 15rem;
     object-fit: cover;
@@ -391,7 +400,7 @@ body > #mainGrid > main #aboutImage {
     mask-repeat: no-repeat;
 }
 
-body > #mainGrid > main #aboutApp:hover {
+#about #aboutApp:hover {
     animation: appWiggle 0.35s infinite ease-out;
 }
 
@@ -406,7 +415,7 @@ body > #mainGrid > main #aboutApp:hover {
     100% { transform: rotate(0); }
 }
 
-body > #mainGrid > main #appText {
+#about #appText {
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
