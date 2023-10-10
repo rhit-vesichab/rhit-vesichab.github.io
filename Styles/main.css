@@ -165,6 +165,8 @@ body > #mainGrid > footer div {
     flex-wrap: wrap;
     flex-basis: auto;
     align-items: center;
+    justify-items: left;
+    margin: 0 var(--mediumSpace);
 }
 
 body > #mainGrid > footer a {
