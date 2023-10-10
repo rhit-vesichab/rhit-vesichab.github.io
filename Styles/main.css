@@ -52,13 +52,13 @@ body > #mainGrid > #navBar {
 }
 
 body > #mainGrid > #navBar > #openMenuButton {
-    display: block;
+    display: none;
     height: 48px;
     width: 48px;
 }
 
 body > #mainGrid > #navBar > ul {
-    display: none;
+    display: block;
     margin: auto 0;
     padding-inline-start: 0;
 }
@@ -68,13 +68,13 @@ body > #mainGrid > #navBar ul li {
     padding-right: var(--smallSpace);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     body > #mainGrid > #navBar > #openMenuButton {
-        display: none;
+        display: block;
     }
     
     body > #mainGrid > #navBar > ul {
-        display: block;
+        display: none;
     }
 }
 
@@ -165,8 +165,6 @@ body > #mainGrid > footer div {
     flex-wrap: wrap;
     flex-basis: auto;
     align-items: center;
-    justify-content: left;
-    margin: 0 var(--mediumSpace);
 }
 
 body > #mainGrid > footer a {
@@ -181,7 +179,7 @@ body > #mainGrid > footer a:hover {
     color: var(--black);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     body > #mainGrid > footer div {
         justify-content: center;  
         margin: 0;  
@@ -278,7 +276,7 @@ nav a:hover::after {
     align-items: center;
     display: flex;
     flex-basis: 100%;
-    gap: var(--oneSpace);
+    gap: var(--mediumSpace);
     margin-bottom: var(--largeSpace);
 }
 
@@ -300,16 +298,11 @@ nav a:hover::after {
     flex-grow: 0;
 }
 
-@media screen and (min-width: 1150px) {
-    .image-div {
-        gap: var(--mediumSpace);
-    }
-}
-
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1024px) {
     .image-div {
         flex-direction: column-reverse;
         text-align: left;
+        gap: var(--oneSpace);
     }
 
     .right-text-mode, .left-text-mode {
